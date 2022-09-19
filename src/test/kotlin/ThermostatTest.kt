@@ -13,4 +13,11 @@ internal class ThermostatTest {
         thermostat.toggleFanStatus()
         assertEquals("fanStatus can be set to true", thermostat.fanStatus, true)
     }
+    @Test
+    fun testFanCanBeToggledOnAndOff() {
+        val thermostat = Thermostat()
+        thermostat.toggleFanStatus()
+        thermostat.toggleFanStatus()
+        assertEquals("fanStatus can be set to true", thermostat.fanStatus, false)
+    }
 }
