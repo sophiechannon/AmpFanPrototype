@@ -1,4 +1,4 @@
-.idea/
+.idea
 /build
 out/
 *.class
@@ -24,3 +24,5 @@ gradlewrapper.jar
 # gradle/wrapper/gradle-wrapper.properties
 
 # End of https://www.gitignore.io/api/gradle
+/.gradle/
+/build/

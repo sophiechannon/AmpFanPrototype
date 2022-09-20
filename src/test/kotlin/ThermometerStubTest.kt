@@ -4,9 +4,23 @@ import org.mockito.Mockito.*
 
 class ThermometerStubTest {
     @Test
-    fun testGetTempReturnsRandomNumber() {
-        val thermometer: ThermometerStub = mock(ThermometerStub::class.java)
-        `when`(thermometer.getTemp()).thenReturn(60)
-        assertEquals("returns random temp", thermometer.getTemp(), 60)
+    fun testGetTempDecreasesTempOverSeventy() {
+        val thermometer = ThermometerStub()
+        thermometer.currentTemp = 70
+        assertEquals("decreases temp over 70", thermometer.getTemp(), 69)
+        assertEquals("up is now false", thermometer.up, false)
+    }
+    @Test
+    fun testGetTempIncreasesUnderThirty() {
+        val thermometer = ThermometerStub()
+        thermometer.currentTemp = 30
+        assertEquals("decreases temp over 30", thermometer.getTemp(), 31)
+        assertEquals("up is now false", thermometer.up, true)
+    }
+    @Test
+    fun testGetTempWorksForRandomNumber() {
+        val thermometer = ThermometerStub()
+        thermometer.currentTemp = 56
+        assertEquals("works for random number", thermometer.getTemp(), 57)
     }
 }
