@@ -1,6 +1,5 @@
 import org.junit.jupiter.api.Test
 import kotlin.test.DefaultAsserter.assertEquals
-import org.mockito.Mockito.*
 
 class ThermometerStubTest {
     @Test
